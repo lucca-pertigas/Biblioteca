@@ -29,10 +29,10 @@ public class ServicoLivro implements Servicos{
 			livro.setAutor(novoAutor);
 			livro.setEditora(novaEditora);
 			livro.setNumeroPaginas(novasPaginas);
-			System.out.println("Livro com ID: " + id + "alterado com sucesso");
+			System.out.println("Livro com ID: " + id + " alterado com sucesso");
 			return true;
 		}
-		System.out.println("Livro com ID: " + id + "nao encontrado");
+		System.out.println("Livro com ID: " + id + " nao encontrado");
 		return false;
 	}
 	

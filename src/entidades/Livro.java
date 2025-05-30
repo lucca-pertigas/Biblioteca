@@ -28,7 +28,7 @@ public class Livro extends Publicacao{
 	}
 
 	public String toString() {
-		return "Livro: " + "\nId: " + getId() + "\nTitulo: " + getTitulo() + "\nAno de publicacao: " + getAnoPublicacao() + "\nAutor: " + autor
+		return "\n\nLivro: " + "\nId: " + getId() + "\nTitulo: " + getTitulo() + "\nAno de publicacao: " + getAnoPublicacao() + "\nAutor: " + autor
 				+ "\nEditora: " + getEditora() + "\nNumero de paginas: " + numeroPaginas;
 	}
 	

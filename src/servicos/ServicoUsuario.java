@@ -23,13 +23,16 @@ public class ServicoUsuario implements Servicos{
 		listaUsuarios.add(new Usuario(proximoId++, nome, email, telefone));
 	}
 	
-	public void alterarUsuario(Integer id, String novoNome, String novoEmail, String novoTelefone) {
+	public boolean alterarUsuario(Integer id, String novoNome, String novoEmail, String novoTelefone) {
 		for (Usuario usuario : listaUsuarios) {
 			usuario.setNome(novoNome);
 			usuario.setEmail(novoEmail);
 			usuario.setTelefone(novoTelefone);
-			System.out.println("Usuario com id: " + id + "Alterado com sucesso");
+			System.out.println("Usuario com id: " + id + " alterado com sucesso");
+			return true;
 		}
+		System.out.println("Usuario com id: " + id + " nao encontrado");
+		return false;
 	}
 	
 	public void listar() {

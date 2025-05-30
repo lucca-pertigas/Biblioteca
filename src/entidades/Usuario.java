@@ -46,7 +46,7 @@ public class Usuario {
 	}
 
 	public String toString() {
-		return "Usuario: \nMatricula: " + matricula + "\nNome: " + nome + "\nEmail: " + email + "\nTelefone: " + telefone;
+		return "\n\nUsuario: \nMatricula: " + matricula + "\nNome: " + nome + "\nEmail: " + email + "\nTelefone: " + telefone;
 	}
 	
 	

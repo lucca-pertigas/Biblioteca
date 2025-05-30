@@ -29,10 +29,10 @@ public class ServicoRevista implements Servicos{
 			revista.setEditora(novaEditora);
 			revista.setNumeroEdicao(novaEdicao);
 			revista.setMesPublicacao(novoMes);
-			System.out.println("Revista com ID: " + id + "alterada com sucesso");
+			System.out.println("Revista com ID: " + id + " alterada com sucesso");
 			return true;
 		}
-		System.out.println("Revista com ID: " + id + "nao encontrada");
+		System.out.println("Revista com ID: " + id + " nao encontrada");
 		return false;
 	}
 	
