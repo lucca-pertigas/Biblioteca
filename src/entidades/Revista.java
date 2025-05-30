@@ -4,9 +4,9 @@ public class Revista extends Publicacao{
 	private Integer numeroEdicao;
 	private Integer mesPublicacao;
 	
-	public Revista(Integer id, String titulo, Integer anoPublicacao, String editora, Integer numeroEdicao,
+	public Revista(String titulo, Integer anoPublicacao, String editora, Integer numeroEdicao,
 			Integer mesPublicacao) {
-		super(id, titulo, anoPublicacao, editora);
+		super(titulo, anoPublicacao, editora);
 		this.numeroEdicao = numeroEdicao;
 		this.mesPublicacao = mesPublicacao;
 	}

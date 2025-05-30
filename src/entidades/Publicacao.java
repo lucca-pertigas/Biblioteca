@@ -1,22 +1,21 @@
 package entidades;
 
 public abstract class Publicacao {
+	private static int contadorId = 0;
+	
 	private Integer id;
 	private String titulo;
 	private Integer anoPublicacao;
 	private String editora;
-	public Publicacao(Integer id, String titulo, Integer anoPublicacao, String editora) {
-		super();
-		this.id = id;
+	
+	public Publicacao(String titulo, Integer anoPublicacao, String editora) {
+		this.id = ++contadorId;
 		this.titulo = titulo;
 		this.anoPublicacao = anoPublicacao;
 		this.editora = editora;
 	}
-	public Integer getId() {
+	public int getId() {
 		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
 	}
 	public String getTitulo() {
 		return titulo;

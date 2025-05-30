@@ -4,9 +4,9 @@ public class Livro extends Publicacao{
 	private String autor;
 	private Integer numeroPaginas;
 	
-	public Livro(Integer id, String titulo, Integer anoPublicacao, String editora, String autor,
+	public Livro(String titulo, Integer anoPublicacao, String editora, String autor,
 			Integer numeroPaginas) {
-		super(id, titulo, anoPublicacao, editora);
+		super(titulo, anoPublicacao, editora);
 		this.autor = autor;
 		this.numeroPaginas = numeroPaginas;
 	}
