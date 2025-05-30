@@ -28,7 +28,7 @@ public class Revista extends Publicacao{
 	}
 	
 	public String toString() {
-		return "Revista: " + "\nId: " + getId() + "\nTitulo: " + getTitulo() + "\nAno de publicacao: " + getAnoPublicacao() + "\nEdicao: " + numeroEdicao
+		return "\n\nRevista: " + "\nId: " + getId() + "\nTitulo: " + getTitulo() + "\nAno de publicacao: " + getAnoPublicacao() + "\nEdicao: " + numeroEdicao
 				+ "\nEditora: " + getEditora() + "\nMes da publicacao: " + mesPublicacao;
 	}
 	

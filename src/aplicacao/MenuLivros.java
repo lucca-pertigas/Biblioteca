@@ -2,7 +2,6 @@ package aplicacao;
 
 import servicos.ServicoLivro;
 import java.util.Scanner;
-import entidades.Livro;
 
 public class MenuLivros {
 	private ServicoLivro servicoLivro;

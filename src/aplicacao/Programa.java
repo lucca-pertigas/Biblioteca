@@ -21,6 +21,7 @@ public class Programa {
         
         MenuUsuario menuUsuario = new MenuUsuario(servicoUsuario, sc);
         MenuLivros menuLivros = new MenuLivros(servicoLivro, sc);
+        MenuRevistas menuRevistas = new MenuRevistas(servicoRevista, sc);
         
 		int escolha;
 		
@@ -42,6 +43,7 @@ public class Programa {
 					menuLivros.executarMenuLivro();
 					break;
 				case 3:
+					menuRevistas.executarMenuRevista();
 					break;
 				case 0:
 					System.out.println("Encerrando o aplicativo !");
