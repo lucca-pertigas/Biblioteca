@@ -41,6 +41,15 @@ public class ServicoUsuario implements Servicos{
 		}
 	}
 	
+	public Usuario buscarPorId(int matricula) {
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getMatricula() == matricula) {
+            	return usuario;
+            }
+        }
+        return null;
+    }
+	
 	public boolean excluir(int matricula) {
 		return listaUsuarios.removeIf(r -> r.getMatricula() == matricula);
 	}

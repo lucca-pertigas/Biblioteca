@@ -3,6 +3,7 @@ package servicos;
 import java.util.List;
 import java.util.ArrayList;
 
+import entidades.Livro;
 import entidades.Revista;
 
 public class ServicoRevista implements Servicos{
@@ -41,6 +42,15 @@ public class ServicoRevista implements Servicos{
 			System.out.println(revista);
 		}
 	}
+	
+	public Revista buscarPorId(int id) {
+        for (Revista revista : listaRevistas) {
+            if (revista.getId() == id) {
+            	return revista;
+            }
+        }
+        return null;
+    }
 	
 	public boolean excluir(int id) {
 		return listaRevistas.removeIf(r -> r.getId() == id);

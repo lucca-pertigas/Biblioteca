@@ -5,6 +5,7 @@ import java.util.Scanner;
 import servicos.ServicoUsuario;
 import servicos.ServicoLivro;
 import servicos.ServicoRevista;
+import servicos.ServicoEmprestimo;
 
 public class Programa {
 
@@ -14,6 +15,7 @@ public class Programa {
 		ServicoUsuario servicoUsuario = new ServicoUsuario();
 		ServicoLivro servicoLivro = new ServicoLivro();
         ServicoRevista servicoRevista = new ServicoRevista();
+        ServicoEmprestimo servicoEmprestimo = new ServicoEmprestimo();
         		
         servicoUsuario.cadastrarAutomaticamente();
         servicoLivro.cadastrarAutomaticamente();
@@ -22,6 +24,7 @@ public class Programa {
         MenuUsuario menuUsuario = new MenuUsuario(servicoUsuario, sc);
         MenuLivros menuLivros = new MenuLivros(servicoLivro, sc);
         MenuRevistas menuRevistas = new MenuRevistas(servicoRevista, sc);
+        MenuEmprestimo menuEmprestimo = new MenuEmprestimo(servicoEmprestimo, servicoRevista,servicoLivro, servicoUsuario, sc);
         
 		int escolha;
 		
@@ -30,6 +33,7 @@ public class Programa {
 			System.out.println("1 - Gerenciar Usuario");
 			System.out.println("2 - Gerenciar Livros");
 			System.out.println("3 - Gerenciar Revistas");
+			System.out.println("4 - Gerenciar Emprestimos");
 			System.out.println("0 - Sair");
 			System.out.println("Escolha uma opcao: ");
 			escolha = sc.nextInt();
@@ -44,6 +48,9 @@ public class Programa {
 					break;
 				case 3:
 					menuRevistas.executarMenuRevista();
+					break;
+				case 4:
+					menuEmprestimo.executarMenuEmprestimo();
 					break;
 				case 0:
 					System.out.println("Encerrando o aplicativo !");

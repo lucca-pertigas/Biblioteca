@@ -3,19 +3,19 @@ package entidades;
 import java.time.LocalDate;
 
 public class Emprestimo {
+	private static int contadorEmprestimo = 0;
 	private Integer numeroEmprestimo;
 	private Usuario usuario;
 	private Publicacao publicacao;
 	private LocalDate dataEmprestimo;
 	private LocalDate dataDevolucao;
 	
-	public Emprestimo(Integer numeroEmprestimo, Usuario usuario, Publicacao publicacao, LocalDate dataEmprestimo,
-			LocalDate dataDevolucao) {
-		this.numeroEmprestimo = numeroEmprestimo;
+	public Emprestimo(Usuario usuario, Publicacao publicacao) {
+		this.numeroEmprestimo = ++contadorEmprestimo;
 		this.usuario = usuario;
 		this.publicacao = publicacao;
-		this.dataEmprestimo = dataEmprestimo;
-		this.dataDevolucao = dataDevolucao;
+		this.dataEmprestimo = LocalDate.now();
+		this.dataDevolucao = null;
 	}
 
 	public Integer getNumeroEmprestimo() {
@@ -58,7 +58,14 @@ public class Emprestimo {
 		this.dataDevolucao = dataDevolucao;
 	}
 
-	@Override
+    public boolean estaDevolvido() {
+        return dataDevolucao != null;
+    }
+
+    public void devolver() {
+        this.dataDevolucao = LocalDate.now();
+    }
+
 	public String toString() {
 		return "Emprestimo: \nNumero emprestimo: " + numeroEmprestimo + "\nUsuario: " + usuario + "\nPublicacao: "
 				+ publicacao + "\nData emprestimo: " + dataEmprestimo + "\nData devolucao: " + dataDevolucao;

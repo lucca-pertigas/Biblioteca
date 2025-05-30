@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entidades.Livro;
+import entidades.Usuario;
 
 public class ServicoLivro implements Servicos{
 	private List<Livro> listaLivros = new ArrayList<>();
@@ -41,6 +42,15 @@ public class ServicoLivro implements Servicos{
 			System.out.println(livro);
 		}
 	}
+	
+	public Livro buscarPorId(int id) {
+        for (Livro livro : listaLivros) {
+            if (livro.getId() == id) {
+            	return livro;
+            }
+        }
+        return null;
+    }
 	
 	public boolean excluir(int id) {
 		return listaLivros.removeIf(r -> r.getId() == id);
