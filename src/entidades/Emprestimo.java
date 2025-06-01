@@ -67,7 +67,7 @@ public class Emprestimo {
     }
 
 	public String toString() {
-		return "Emprestimo: \nNumero emprestimo: " + numeroEmprestimo + "\nUsuario: " + usuario + "\nPublicacao: "
+		return "\n\nEmprestimo: \nNumero emprestimo: " + numeroEmprestimo + "\nUsuario: " + usuario + "\nPublicacao: "
 				+ publicacao + "\nData emprestimo: " + dataEmprestimo + "\nData devolucao: " + dataDevolucao;
 	}
 	

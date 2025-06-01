@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entidades.Livro;
-import entidades.Usuario;
 
 public class ServicoLivro implements Servicos{
 	private List<Livro> listaLivros = new ArrayList<>();
@@ -25,13 +24,15 @@ public class ServicoLivro implements Servicos{
 	
 	public boolean alterarLivro(Integer id, String novoTitulo, Integer novoAno, String novoAutor, String novaEditora, Integer novasPaginas) {
 		for (Livro livro : listaLivros) {
-			livro.setTitulo(novoTitulo);
-			livro.setAnoPublicacao(novoAno);
-			livro.setAutor(novoAutor);
-			livro.setEditora(novaEditora);
-			livro.setNumeroPaginas(novasPaginas);
-			System.out.println("Livro com ID: " + id + " alterado com sucesso");
-			return true;
+			if (livro.getId() == id) {
+				livro.setTitulo(novoTitulo);
+				livro.setAnoPublicacao(novoAno);
+				livro.setAutor(novoAutor);
+				livro.setEditora(novaEditora);
+				livro.setNumeroPaginas(novasPaginas);
+				System.out.println("Livro com ID: " + id + " alterado com sucesso");
+				return true;
+			}
 		}
 		System.out.println("Livro com ID: " + id + " nao encontrado");
 		return false;

@@ -3,7 +3,6 @@ package servicos;
 import java.util.List;
 import java.util.ArrayList;
 
-import entidades.Livro;
 import entidades.Revista;
 
 public class ServicoRevista implements Servicos{
@@ -25,13 +24,15 @@ public class ServicoRevista implements Servicos{
 	
 	public boolean alterarRevista (int id, String novoTitulo, Integer novoAno, String novaEditora, Integer novaEdicao, Integer novoMes) {
 		for (Revista revista : listaRevistas) {
-			revista.setTitulo(novoTitulo);
-			revista.setAnoPublicacao(novoAno);
-			revista.setEditora(novaEditora);
-			revista.setNumeroEdicao(novaEdicao);
-			revista.setMesPublicacao(novoMes);
-			System.out.println("Revista com ID: " + id + " alterada com sucesso");
-			return true;
+			if (revista.getId() == id) {
+				revista.setTitulo(novoTitulo);
+				revista.setAnoPublicacao(novoAno);
+				revista.setEditora(novaEditora);
+				revista.setNumeroEdicao(novaEdicao);
+				revista.setMesPublicacao(novoMes);
+				System.out.println("Revista com ID: " + id + " alterada com sucesso");
+				return true;
+			}
 		}
 		System.out.println("Revista com ID: " + id + " nao encontrada");
 		return false;

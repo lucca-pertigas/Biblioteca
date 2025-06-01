@@ -25,11 +25,13 @@ public class ServicoUsuario implements Servicos{
 	
 	public boolean alterarUsuario(Integer id, String novoNome, String novoEmail, String novoTelefone) {
 		for (Usuario usuario : listaUsuarios) {
-			usuario.setNome(novoNome);
-			usuario.setEmail(novoEmail);
-			usuario.setTelefone(novoTelefone);
-			System.out.println("Usuario com id: " + id + " alterado com sucesso");
-			return true;
+			if (usuario.getMatricula() == id) {
+				usuario.setNome(novoNome);
+				usuario.setEmail(novoEmail);
+				usuario.setTelefone(novoTelefone);
+				System.out.println("Usuario com id: " + id + " alterado com sucesso");
+				return true;
+			}
 		}
 		System.out.println("Usuario com id: " + id + " nao encontrado");
 		return false;

@@ -29,7 +29,7 @@ public class Programa {
 		int escolha;
 		
 		do {
-			System.out.println("--------BIBLIOTECA--------");
+			System.out.println("\n\n--------BIBLIOTECA--------");
 			System.out.println("1 - Gerenciar Usuario");
 			System.out.println("2 - Gerenciar Livros");
 			System.out.println("3 - Gerenciar Revistas");
