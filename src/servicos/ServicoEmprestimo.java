@@ -34,4 +34,19 @@ public class ServicoEmprestimo {
         System.out.println("Empréstimo não encontrado ou já devolvido.");
         return false;
     }
+	
+	public void apresentarPorNumero(int numeroEmprestimo) {
+		for (Emprestimo e : listaEmprestimo) {
+			if (e.getNumeroEmprestimo() == numeroEmprestimo) {
+				System.out.println("\n\nEmprestimo encontrado:");
+				System.out.println("Numero: " + e.getNumeroEmprestimo());
+				System.out.println("Usuario: " + e.getUsuario().getNome());
+				System.out.println("Publicacao: " + e.getPublicacao().getTitulo());
+				System.out.println("Data do Empréstimo: " + e.getDataEmprestimo());
+				System.out.println("Devolvido: " + (e.estaDevolvido() ? "Sim" : "Nao"));
+				return;
+			}
+		}
+		System.out.println("Empréstimo com número " + numeroEmprestimo + " não encontrado.");
+	}
 }

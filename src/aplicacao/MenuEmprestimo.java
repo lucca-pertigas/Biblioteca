@@ -35,6 +35,7 @@ public class MenuEmprestimo {
 	        System.out.println("1 - Registrar Emprestimo");
 	        System.out.println("2 - Listar Emprestimos");
 	        System.out.println("3 - Registrar Devolucao");
+	        System.out.println("4 - Busca emprestimo por ID");
 	        System.out.println("0 - Voltar");
 	        System.out.print("Escolha uma opcao: ");
 	        escolha = sc.nextInt();
@@ -91,6 +92,11 @@ public class MenuEmprestimo {
                 servicoEmprestimo.devolverEmprestimo(numEmprestimo);
                 break;
                 
+	        case 4:
+	        	System.out.println("Digite o id que voce quer buscar: ");
+	        	int busca = sc.nextInt();
+	        	
+	        	servicoEmprestimo.apresentarPorNumero(busca);
 			case 0:
 				System.out.println("Retornando ao menu principal !");
 				break;

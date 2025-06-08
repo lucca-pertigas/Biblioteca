@@ -52,6 +52,19 @@ public class ServicoUsuario implements Servicos{
         return null;
     }
 	
+	public void apresentarPorId(int id) {
+		Usuario usuario = buscarPorId(id);
+		if (usuario != null) {
+			System.out.println("\n\nUsuario encontrado:");
+			System.out.println("ID: " + usuario.getMatricula());
+			System.out.println("Nome: " + usuario.getNome());
+			System.out.println("Email: " + usuario.getEmail());
+			System.out.println("Telefone: " + usuario.getTelefone());
+		} else {
+			System.out.println("Usuario com ID " + id + " nao encontrado.");
+		}
+	}
+	
 	public boolean excluir(int matricula) {
 		return listaUsuarios.removeIf(r -> r.getMatricula() == matricula);
 	}

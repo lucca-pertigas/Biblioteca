@@ -21,6 +21,7 @@ public class MenuLivros {
 			System.out.println("2 - Listar livros");
 			System.out.println("3 - Modificar dados de um livro");
 			System.out.println("4 - Excluir livro");
+			System.out.println("5 - Buscar Revista por ID");
 			System.out.println("0 - Voltar");
 			System.out.println("Escolha uma opcao: ");
 			escolha = sc.nextInt();
@@ -77,6 +78,12 @@ public class MenuLivros {
 					Integer matricula = sc.nextInt();
 					
 					servicoLivro.excluir(matricula);
+					break;
+				case 5:
+					System.out.println("Qual o id do livro que voce quer buscar ?");
+					int busca = sc.nextInt();
+					
+					servicoLivro.apresentarPorId(busca);
 					break;
 				case 0:
 					System.out.println("Retornando ao menu principal !");

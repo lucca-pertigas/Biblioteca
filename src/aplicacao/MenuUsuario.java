@@ -21,6 +21,7 @@ public class MenuUsuario {
 			System.out.println("2 - Listar usuarios");
 			System.out.println("3 - Modificar dados do usuario");
 			System.out.println("4 - Excluir usuario");
+			System.out.println("5 - Buscar usuario por numero de matricula");
 			System.out.println("0 - Voltar");
 			escolha = sc.nextInt();
 			sc.nextLine();
@@ -62,6 +63,12 @@ public class MenuUsuario {
 					int matricula = sc.nextInt();
 					
 					servicoUsuario.excluir(matricula);
+					break;
+				case 5:
+					System.out.println("Digite a matricula do usuario que voce quer busca: ");
+					int busca = sc.nextInt();
+					
+					servicoUsuario.apresentarPorId(busca);
 					break;
 				case 0:
 					System.out.println("Voltando ao menu principal");

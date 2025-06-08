@@ -56,4 +56,19 @@ public class ServicoRevista implements Servicos{
 	public boolean excluir(int id) {
 		return listaRevistas.removeIf(r -> r.getId() == id);
 	}
+	
+	public void apresentarPorId(int id) {
+		Revista revista = buscarPorId(id);
+		if (revista != null) {
+			System.out.println("\n\nRevista encontrada:");
+			System.out.println("ID: " + revista.getId());
+			System.out.println("Titulo: " + revista.getTitulo());
+			System.out.println("Ano de Publicacao: " + revista.getAnoPublicacao());
+			System.out.println("Editora: " + revista.getEditora());
+			System.out.println("Numero da Edicao: " + revista.getNumeroEdicao());
+			System.out.println("Mes de Publicacao: " + revista.getMesPublicacao());
+		} else {
+			System.out.println("Revista com ID " + id + " nao encontrada.");
+		}
+	}
 }

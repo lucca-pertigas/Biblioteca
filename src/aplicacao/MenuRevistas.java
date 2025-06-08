@@ -21,6 +21,7 @@ public class MenuRevistas {
 			System.out.println("2 - Listar revistas");
 			System.out.println("3 - Modificar dados de uma revista");
 			System.out.println("4 - Excluir revista");
+			System.out.println("5 - Buscar revista por ID");
 			System.out.println("0 - Voltar");
 			System.out.println("Escolha uma opcao: ");
 			escolha = sc.nextInt();
@@ -73,6 +74,12 @@ public class MenuRevistas {
 				System.out.println("Digite o id da revista que voce quer excluir: ");
 				Integer matricula = sc.nextInt();
 				servicoRevista.excluir(matricula);
+				break;
+			case 5:
+				System.out.println("Digite o id da revista que voce quer buscar: ");
+				int busca = sc.nextInt();
+				
+				servicoRevista.apresentarPorId(busca);
 				break;
 			case 0:
 				System.out.println("Voltando ao menu anterior...");

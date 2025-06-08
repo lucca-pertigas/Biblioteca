@@ -56,5 +56,20 @@ public class ServicoLivro implements Servicos{
 	public boolean excluir(int id) {
 		return listaLivros.removeIf(r -> r.getId() == id);
 	}
+	
+	public void apresentarPorId(int id) {
+		Livro livro = buscarPorId(id);
+		if (livro != null) {
+			System.out.println("\n\nLivro encontrado:");
+			System.out.println("ID: " + livro.getId());
+			System.out.println("Titulo: " + livro.getTitulo());
+			System.out.println("Ano de Publicacao: " + livro.getAnoPublicacao());
+			System.out.println("Autor: " + livro.getAutor());
+			System.out.println("Editora: " + livro.getEditora());
+			System.out.println("Número de Paginas: " + livro.getNumeroPaginas());
+		} else {
+			System.out.println("Livro com ID " + id + " nao encontrado.");
+		}
+	}
 
 }
